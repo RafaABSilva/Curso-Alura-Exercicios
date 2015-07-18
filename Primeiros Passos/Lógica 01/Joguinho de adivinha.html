@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<script>
+
+alert("Oi! Vamos Jogar?")
+alert("Eu vou pensar em um número de 0 á 10, e você tenta adivinhar. OK?");
+alert("Só lembrando, o número deve ser inteiro.");
+
+var numeroPensado = Math.round(Math.random() * 10);
+console.log("Número Pensado: " + numeroPensado);
+
+
+for(var numeroDeChutes = 1; numeroDeChutes <= 3; numeroDeChutes++){
+console.log("Número do Chute Atual: " + numeroDeChutes)
+var chute = Math.round(prompt("Qual é o número que eu pensei?"));
+
+if(chute == numeroPensado) {
+	alert("Uau! Meus parabéns! Eu pensei justamente no "+ numeroPensado);
+	break;
+} else {
+	if(numeroDeChutes == 3) {
+	alert("Infelizmente você não conseguiu acertar o número que pensei, que inclusive é " + numeroPensado + ".");
+	break;
+}
+	if(chute != numeroPensado) {
+	alert("Infelizmente você errou. Tente novamente, você ainda tem " + (3-numeroDeChutes) + " tentativa(s).");
+}
+};
+
+
+};
+</script>

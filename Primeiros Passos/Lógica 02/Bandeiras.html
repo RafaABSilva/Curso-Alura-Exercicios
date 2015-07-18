@@ -1,0 +1,21 @@
+<canvas id="tela" width="600" height="1000"></canvas>
+
+<script>
+tela = document.getElementById("tela");
+pincel = tela.getContext("2d");
+
+//Colômbia:
+pincel.fillStyle = "Yellow";
+pincel.fillRect(0,0,600,200);
+pincel.fillStyle = "blue";
+pincel.fillRect(0,200,600,100);
+pincel.fillStyle = "red";
+pincel.fillRect(0,300,600,100);
+
+//Madagascar:
+pincel.fillStyle = "red";
+pincel.fillRect(200,600,400,200);
+pincel.fillStyle = "green";
+pincel.fillRect(200,800,400,200);
+
+</script>

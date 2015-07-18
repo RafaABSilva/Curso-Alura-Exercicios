@@ -1,0 +1,32 @@
+<canvas id="tela" width="600" height="400" ></canvas>
+
+<script>
+tela = document.getElementById("tela");
+c = tela.getContext("2d");
+
+c.fillStyle = "gray";
+c.fillRect(0,0,600,400);
+
+var click = function(evento){
+	var x = evento.pageX - tela.offsetLeft; 
+	var y = evento.pageY - tela.offsetTop;
+	var botao = evento.button;
+
+
+if(botao == 0){
+	Cor = "blue";
+} else if(botao == 2){
+	Cor = "red";
+};
+
+console.log("PosicaoX:"+ x + " , " + "PosicaoY:" + y + ". " + "Botao:" + botao + ". " + "Cor:" + Cor + ".")
+
+	c.fillStyle= Cor;
+	c.beginPath();
+	c.arc(x,y,10,0,2*3.14);
+	c.fill();
+
+};
+
+tela.onmousedown = click;
+</script>

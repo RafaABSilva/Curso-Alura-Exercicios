@@ -1,0 +1,18 @@
+<meta charset= "UTF-8">
+
+<script>
+var cauculaIMC = function(altura, peso) {
+	imc = peso / (altura * altura)
+	return imc; 
+};
+
+var altura = prompt("Qual é a sua altura?") 
+var peso = prompt("Qual é o seu peso ?")
+
+
+
+document.write("O meu IMC  é: " + cauculaIMC(altura, peso) + "<br>")
+
+document.write("Você está " + (35 - cauculaIMC(altura, peso)) + " ponto(s) da obsidade Severa.")
+</script>
+

@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<script>
+
+var pulalinha = function() {
+ document.write("<br>");
+};  
+
+var mostra = function(frase) {
+ document.write(frase);
+ pulalinha()
+ pulalinha()
+};
+
+var anodaprimeiracopa =  parseInt(prompt("QUAL O ANO DA PRIMEIRA COPA?"));
+var anoatual = parseInt(prompt("QUAL O ANO DE HOJE"));
+
+for(anodecopa = anodaprimeiracopa; anodecopa <= anoatual; anodecopa = anodecopa + 4) {
+ mostra(anodecopa + "  teve copa!");
+
+	if(anodecopa == anoatual) {
+		mostra("OBA! ESSE ANO TEM COPA"); 
+	}
+
+};
+
+console.log(anodecopa)
+console.log(anoatual)
+
+	difAnos = (anoatual - (anodecopa-4))
+
+console.log(difAnos)	
+	 if((difAnos == 1) || (difAnos == 2) || (difAnos == 3)){
+		mostra("QUE CHATO ESSE ANO NÃO TEM COPA");
+		console.log("ok")
+	} else {
+
+	}
+
+</script>

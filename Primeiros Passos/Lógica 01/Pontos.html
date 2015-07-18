@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<script>
+ var calculaPontos = function(vitorias, empates) {
+    return (vitorias * 3) + empates; 
+};
+
+var pulaLinha = function(){
+	document.write("<br>")
+}
+var mostra = function(controle){
+	document.write(controle)
+}
+
+var vitorias = parseInt(prompt("Quantos jogos o CDC Futebol Clube venceu?"));
+var empates = parseInt(prompt("Quantos jogos o CDC Futebol Clube empatou?"));
+pontos = calculaPontos(vitorias, empates)
+
+mostra("Nosso time tem " + pontos + " pontos!" + "<br>");
+
+if(pontos > 28) {
+    mostra("Nosso time está indo MELHOR que o Livros Velhos!");
+}
+</script>

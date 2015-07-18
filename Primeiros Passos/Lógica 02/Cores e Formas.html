@@ -1,0 +1,26 @@
+<canvas id="tela" width="600" height="400" ></canvas>
+
+<script>
+tela = document.getElementById("tela");
+pincel = tela.getContext("2d");
+
+pincel.fillStyle = "green";
+pincel.fillRect(0,0,200,400);
+
+pincel.fillStyle = "red";
+pincel.fillRect(400,0,200,400);
+
+pincel.beginPath();
+pincel.fillStyle = "blue";
+//			 ( X , Y );
+pincel.moveTo(300,200);
+pincel.lineTo(200,400);
+pincel.lineTo(400,400);
+pincel.fill();
+
+pincel.beginPath();
+pincel.fillStyle = "red";
+//		  (PosX, PosY, Raio, AnguloI, AnguloF)
+pincel.arc(100 , 200 , 100 , 0      , 2*3.14 );
+pincel.fill();
+</script>

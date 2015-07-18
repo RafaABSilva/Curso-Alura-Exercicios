@@ -1,0 +1,70 @@
+<meta charset="UTF-8">
+
+<script>
+alert("Olá, Seja Bem-Vindo a loteria, vou sortear seis números, em seguida digitar seus palpites.")
+console.log("Números da Loteria:")
+var numeros = []
+var conflito = false
+
+for(var controle = 0; controle <= 5; controle++){
+
+var numeroGerado = Math.round(Math.random()*60);
+
+	for(var a = 0; a <= 5; a++){
+		if(numeros[a] == numeroGerado){
+			numeroGerado = Math.round(Math.random()*60);
+			numeros.push(numeroGerado);
+			console.log(controle + "º Número Gerado é: "+ numeros[controle])
+			conflito = true
+			break;
+			} 
+		}
+
+	if(conflito == false){
+		numeros.push(numeroGerado);
+		console.log(controle + "º Número Gerado é: "+ numeros[controle])
+	}
+conflito = false
+}
+
+alert("Pronto! Vamos lá!")
+console.log("Números do Usuário:")
+var numerosUsuario = []
+
+for(var c = 0; c <= 5; c++){
+	var numeroInserido = parseInt(prompt("Me diga o seu " + (c+1) + "º palpite."));
+		for(controle = 0; controle <= 5; controle++){
+			if(numeroInserido == numerosUsuario[controle]){
+				alert("Você já digitou esse número! Por favor digite outro")
+				var numeroInserido = parseInt(prompt("Me diga outro palpite."))
+				numerosUsuario.push(numeroInserido);
+				console.log(c + "º Número do Usuário é: "+numerosUsuario[c])
+				conflito =true
+				break;
+			}
+		}
+if(conflito == false){
+	numerosUsuario.push(numeroInserido)
+	console.log(c + "º Número do Usuário é: "+numerosUsuario[c])
+}
+conflito = false
+}
+
+var resultado = 0
+for(var c = 0; c <= 5 ; c++){
+	for(var u = 0; u <= 5 ; u++){
+		if(numerosUsuario[u] == numeros[c]){
+		   resultado = resultado + 1
+		}
+	}
+}	
+if(resultado == 0){
+	alert("Infelizmente você não acertou nenhum número")
+} else {
+	if(resultado == 6){
+		alert("Parabéns! Você acertou todos os SEIS números e está milionário!")
+	} else {
+		alert("Infelizmente você não acertou todos os números, mas pelo menos acertou " + resultado + " números")
+	}
+}
+</script>

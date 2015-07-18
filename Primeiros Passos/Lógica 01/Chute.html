@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<script>
+var pulaLinha = function(){
+	document.write("<br>")
+}
+var mostra = function(controle){
+	document.write(controle)
+	pulaLinha()
+}
+    var numeroPensado = Math.round(Math.random() * 100);
+    console.log(numeroPensado);
+    var chute = prompt("Já pensei. Qual você acha que é?");
+    if(chute == numeroPensado) {
+        mostra("Uau! Você acertou, pois eu pensei no " + numeroPensado);
+    } else {
+		 if(chute < numeroPensado){
+		 alert("Você errou! O número que pensei é maior que " + chute + ".");	
+		 } else {
+		 alert("Você errou! O número que pensei é menor que " + chute + ".");	
+		 }
+	}
+
+</script>
