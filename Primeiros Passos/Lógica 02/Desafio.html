@@ -1,0 +1,46 @@
+<canvas id="Tela" width="600" height="400"></canvas>
+<meta charset="UTF-8">
+<script>
+var tela = document.getElementById("Tela");
+var pincel = tela.getContext("2d");
+
+var circulo = function(x,y,raio,cor){
+	pincel.beginPath();
+	pincel.fillStyle=cor;
+	pincel.arc(x,y,raio,0,2*Math.PI);
+	pincel.fill();
+};
+
+var x = 0
+var y = 0 
+
+var alvo = function(){
+	var raio = 30;
+	x =  Math.round((Math.random()*560));
+	y =  Math.round((Math.random()*360));
+	console.log("X:"+x+", Y:"+y+".");
+
+	pincel.clearRect(0,0,600,400);
+
+	circulo(x,y,raio,"red");
+	circulo(x,y,(raio-10),"white");
+	circulo(x,y,(raio-20),"red");
+};
+
+var click = function(evento){
+	var Xclick = evento.pageX - tela.offsetLeft;
+	var Yclick = evento.pageY - tela.offsetTop;
+
+	circulo(Xclick,Yclick,8,"black");
+
+	console.log("ClickY:"+Yclick+","+"ClickX:"+Xclick+".");
+
+	if((Xclick-30 <= x) && ( x <= Xclick+30) && (Yclick-30 <= y) && (y <= Yclick+30)){
+		alert("Parabéns! Você acertou!");
+	}
+}
+
+//alvo()
+tela.onclick = click;
+setInterval(alvo,1000);
+</script>
