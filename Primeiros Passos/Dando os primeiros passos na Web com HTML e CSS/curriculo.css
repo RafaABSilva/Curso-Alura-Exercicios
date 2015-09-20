@@ -1,0 +1,26 @@
+				h2{
+					background-color:#5599DD;
+					color:#DDDDDD;
+					padding:5px;
+					}
+
+				.expA{
+					text-indent:50px;
+					}
+
+				#email{
+					font-style:italic;
+					}
+
+				body{
+					font-family:sans-serif;
+					}
+				#paginaPrincipal{
+					width:960px;
+					margin-right:auto;
+					margin-left:auto;
+				}
+
+				#cabecalho{
+					text-align:center;
+				}
